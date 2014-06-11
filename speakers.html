@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="countdown/jquery.countdown.css" rel="stylesheet" type="text/css" />
+		<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js" type="text/javascript"></script>
+		<script src="countdown/jquery.countdown.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#countdown').countdown({
+					compact: false,
+					description: "Until SouthEast LinuxFest!",
+					until: new Date(2012, 5, 8), timezone: -5});	
+				//Set default open/close settings
+				$('.acc_container').hide(); //Hide/close all containers
+				//$('.acc_trigger:first').addClass('active').next().show(); //Add "active" class to first trigger, then show/open the immediate next container
+				 
+				//On Click
+				$('.acc_trigger').click(function(){
+					if ($(this).next().is(':hidden'))
+					{
+						//If immediate next container is closed...
+						$('.acc_trigger').removeClass('active').next().slideUp(); //Remove all .acc_trigger classes and slide up the immediate next container
+						$(this).toggleClass('active').next().slideDown(); //Add .acc_trigger class to clicked trigger and slide down the immediate next container
+					}
+					else
+					{
+						$(this).toggleClass('active').next().slideUp();
+					}
+					return false; //Prevent the browser jump to the link anchor
+				});
+                               if (document.location.toString().indexOf('#') > -1)
+                                {
+					$('.acc_container').hide(); //Hide/close all containers
+                                        var speaker = document.location.toString().split('#')[1];
+                                        $('a[name="' + speaker + '"]').trigger('click');
+                                }
+			});
+
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<img src="header.png" alt="header" style="max-height: 100%;" />
+			<ul style="float: right; margin: 10px 10px 0px auto; position: relative;">
+				<li style="display: inline-block; text-align: center;"><a href="sessions.html" title="Sessions"><img src="sessions.png" /></a><!--br /><a href="sessions.html" title="Sessions">Sessions</a--></li>
+				<li style="display: inline-block; margin: 0px 25px 0px 25px; text-align: center;"><a href="speakers.html" title="Speakers"><img src="speakers.png" /></a><!--br /><a href="speakers.html" title="Speakers">Speakers</a--></li>
+				<li style="display: inline-block; text-align: center;"><a href="map.html" title="Map"><img src="map.png" /></a><!--br /><a href="map.html" title="Map">Map</a--></li>
+			</ul>
+			<div style="background-color: #000000; margin: -5px 0px 0px 0px; padding: 0px; position: relative; width: 100%;">
+				<span class="colorbox" style="background-color: #34687b;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #5a766f;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #7d8264;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #9d8e59;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #c09a4e;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #dea545;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #ff832d;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #ff5520;">&nbsp;</span>
+			</div>
+		</div>
+		<div class="container">
+		<h2 class="acc_trigger"><a href="#" name="Danel Bartholomew">Daniel Bartholomew</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Senior Technical Writer and Sysadmin, Monty Program, Ab</p>
+				<p><u>Presenting Topic: "Anatomy of an Open Source Release"</u></p>
+				<p>There's a lot more that goes into releasing a version of an Open Source project than you may think. It's not just a question of making the source code available, because for most Open Source projects, the code is always available via github, launchpad, or other repository. First you tag the release, which lets people grab the code for that release. But people also want binaries and packages because not every user is willing or knows how to compile software, and if your piece of software is complex, then even if they do have some "./configure; make; sudo make install;" experience they may run into trouble</p>
+				<p>In this talk I will take users through the process we follow for every MariaDB release, from tagging the code, to building it for multiple architectures and operating systems, to testing the packages, to signing the packages, to uploading the files to our network of mirrors and making it available to download.</p>
+				<p>The goal of this talk is to give users an appreciation for the work that goes into getting the software they love into their hands.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="CharlesBell">Dr. Charles A Bell</a></h2>
+		<div class="acc_container">
+			<div class="block">	
+				<p>Title: Senior Software Developer, Oracle</p>			
+				<p><u>Presenting Topic: "Introduction to MySQL Replication"</u></p>
+				<p>MySQL Replication is one of the most popular and powerful features of MySQL. Replication permits separating data writes from reads to improve the performance of heavy read applications. But how does one get started? How does replication work and how do you setup replication? Are there best practices for using replication?</p>
+				<p>This session will examine MySQL Replication from the ground up. It will answer the questions most users have when first considering and setting up replication. The session will cover all aspects of replication from connecting the first slave to managing switchover, failover, and complex replication topologies. The following topics will be covered in detail.</p>
+				<p> - Architecture</p>
+				<p> - Replication prerequisites</p>
+				<p> - Working with the binary log</p>
+				<p> - New feature: global transaction ids</p>
+				<p> - Setting up a simple topology</p>
+				<p> - Considerations for applications</p>
+				<p> - Advanced replication configurations</p>
+				<p> - Switchover</p>
+				<p> - Failover</p>
+				<p> - Best practices for MySQL Replication</p>
+				<p><u>Presenting Topic: High Availability MySQL</u></p>
+				<p>Database professionals are often faced with challenges they need to solve. Among the most challenging is building and growing a data center using MySQL. In this session, we examine topics and scenarios from the perspective of a database administrator responsible for growing a business with MySQL. This session will guide database professionals to become proficient in maintaining the integrity of their MySQL data and servers.</p>
+				<p>If you are a database administrator, information technology professional, or a system administrator planning to maintain and grow a business using MySQL, you are facing the challenging task of building and growing a business. You don't have time to research every minutia of technologies nor do you have the time to wade through a lot of information. This session gives you those answers and more.</p>
+				<p>This session has the answers you need most about growing your technology for your business. It presents a guide to the available solutions to complex scenarios such as scale out and high availability. All in all, it introduces the scenarios and best practices for building a data center using MySQL. Some of the topics covered include the following.</p>
+				<p> - Who needs high availability and why</p>
+				<p> - How to achieve high availability</p>
+				<p> - What replication can do for your data</p>
+				<p> - When and how to scale out</p>
+				<p> - Who needs MySQL Cluster and why</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RobynBergeron">Robyn Bergeron </a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Fedora Project Leader, Red Hat</p>
+				<p><u>Preseting Topics: "Where to go, and how to get there: Using Free and Open Source Tools to plot your map to The Fuuuuuuuuuuture!"</u></p>
+				<p>Cat herding can be a tough gig, but it doesn't have to be. Use the FOSS, Luke! In this session, Robyn will share tips and tools for getting from Point A to Point B, including surveys and scheduling tools (that are Free and Open Source). Also included: A dose of reality, sprinkling of sarcastic humor, and an emphasis on openness and transparency to get you on the road to Somewhere.</p>		
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="JoshBerkus">Josh Berkus</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Core Team, PostgreSQL Project | CEO, PostgreSQL Experts, Inc</p>
+				<p><u>Presenting Topic: "Data Warehousing 101"</u></p>
+				<p>DW, BI, M/R, MPP, OLAP, ETL, ELT, C-Store, SOLR. It's alphabet soup out there! How are you to make sense of big database technologies enough to do your job?</p>
+				<p>Large database veteran Josh Berkus will acquaint you with the terminology and current technologies of data warehousing today. Learn what you need to know to select the technology which is appropriate to the data problem you need to solve.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RonaldBradford">Ronald Bradford </a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p><u>Title: Founder, Effective MySQL</u></p>
+				<p><u>Presenting Topic: "Disaster is inevitable. Be prepared."</u></p>
+				<p>Organizations are always making improvements for scalability, however disaster preparedness is the poor cousin. This presentation will show you how to easily avoid the most common MySQL disaster situations. Backup and recovery is critical for business continuity, many websites run the risk of data loss or corruption because existing procedures (if any) are generally flawed. Discussion includes:</p>
+				<p> - The essential backup options</p>
+				<p> - Why Binary logging for point in time recovery is important</p>
+				<p> - How replication changes things</p>
+				<p> - Recovery complexities</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RussellBryant">Russell Bryant</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Principal Software Engineer, Red Hat</p>
+				<p><u>Presenting Topic: "Getting Started with OpenStack Essex(2012.1) on Fedora 17"</u></p>
+				<p>OpenStack [1] Essex (2012.1) [2] was released on April 5th, 2012.  Fedora 17 is scheduled to be released on May 22nd, 2012, and will include the Essex release.  This talk will cover:</p>
+				<p> - An overview of OpenStack components and high level architecture</p>
+				<p> - A practical walkthrough of getting started with OpenStack on a single bare metal or virtual machine running Fedora 17</p>
+				<p><a href="http://www.openstack.org">[1] http://www.openstack.org</a></p>
+				<p><a href="http://http://wiki.openstack.org/ReleaseNotes/Essex">[2] http://wiki.openstack.org/ReleaseNotes/Essex</a></p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="SheeriCabral">Sherri Cabral</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Senior DB Admin/Architect, Mozilla<p>
+				<p><u>Presenting Topic: "Beyond the ACL's: MySQL Security"</u></p>
+				<p>Securing MySQL includes proper use of ACL’s, but that is only part of MySQL security. Learn from a leading MySQL expert about the other parts of MySQL security – from operating system files and permissions, how to run MySQL as a secure daemon, how to fight against cross-site scripting (XSS) and SQL injection, and how to perform white-hat Google hacking of MySQL.</p>
+				<p><u>Intermediate MySQL Administration</u></p>
+				<p>So you know your way around a MySQL server, but you're not quite ready for hard-core internals. This intermediate session teaches what you need to know about bringing your MySQL administration knowledge to the next level, so that you can better understand what's going on inside your server, find and fix problems, and optimize your databases.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RickCopeland">Rick Copeland  </a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Principal Consultant, Arborian Consulting LLC<p>
+				<p><u>Presenting Topic: "Building Your First MongoDB Application"</u></p>
+				<p>This talk will introduce the features of MongoDB by walking through how one can building a simple location-based checkin application using MongoDB. The talk will cover the basics of MongoDB's document model, query language, map-reduce framework and deployment architecture.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="MatthewConnerton">Matthew Connerton</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p><u>Presenting Topic: "Rapid Drupal Development using the Features Module"</u></p>
+				<p>In this session, we will discuss using the Features Module for Drupal 7 to build out reusable site functionality by pulling together entities, content types, fields, views, context and more. We will focus on how we can use features to package these entities together into reusable modules to make site building faster and cheaper.</p>
+				<p>Using features, anyone building Drupal sites from freelancer to mainstream Drupal agencies can shave hours of development time off the beginning of their site building.</p>
+				<p>We will talk about:<br/>
+				- What the Features Module does and how to build features from views, fields, entities, content types, context, and more<br/>
+				- How to set up a Feature Server to share your features<br/>
+				- Using Drush Make to create your own "distributions" for rapid deployment<br/>
+				- Adding custom hooks to your feature<br/>
+				- Will touch on how to safely override your features on a site by site basis while retaining the ability to update that feature.<br/>
+				- Will touch on how features apply to dev->stage->prod<br/>
+				- A few other concepts related to features to take you to the next step</p>
+				<p>Intended audience:<br/>
+				- Anyone who wants to create reusable feature sets to be deployed quickly on other websites should attend this session<br/>
+				- Sitebuilders, freelancers, and organizations that want to save time when developing websites for clients.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="JayneilDalal">Jayneil Dalal</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: FOSS Advocate<p>
+				<p><u>Presenting Topic: "Image Processing using the PandaBoard"</u></p>
+				<p>Image Processing is a very popular topic nowadays. But most of the people do it on laptops or computers which are not portable platforms. So, in this talk I will cover overview of PandaBoard, how to install Ubuntu on it, installing the OpenCV library in Ubuntu and finally how to run image processing programs on PandaBoard.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="GregDeKoenigsberg">Greg DeKoenigsberg</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: VP of Community, Eucalyptus Systems<p>
+				<p><u>Presenting Topic: "Public Cloud, Private Cloud, Open Cloud, Hybrid Cloud"</u></p>
+				<p>The landscape of cloud computing is quickly evolving. Organizations now want the flexibility to use public clouds where it makes sense, and to build their own clouds where it makes sense. How do you choose a cloud strategy for your organization? What questions should you be asking? And why is open source more important to the cloud landscape than ever?</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="BrentDunn">Brent Dunn</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p><u>Presenting Topic: "A Step-by-Step Drupal Site, in Less than One Hour"</u></p>
+				<p>As a DrupalCamp attendee, it?s easy to look at the theoretical and technical parts of Drupal? but not actually get to see it in action. So, how do you get started? Watch the step-by-step process as we go from downloading Drupal, move beyond ?out-of-the-box?, and begin adding customizations one-by-one, building a website that includes the latest web technologies.
+				<p>Attendees should leave Drupalcamp Charlotte knowing first-hand what it looks like to turn Drupal into a modern day website. Our completed site and source code will be available for download and with time permitting, will include:<br/>
+				- Slideshow and Photo Galleries<br/>
+				- Social Integration with Facebook and Twitter<br/>
+				- Support for your own Video and Embedded Media<br/>
+				- An Event Calendar<br/>
+				- Blog<br/>
+				- A Mobile-friendly Theme<br/>
+				- Newsletter Subscriptions<br/>
+				- Site Search<br/>
+				- Custom Survey Forms<br/>
+				- Content Revisions<br/>
+				- User Comments and Comments Mangement</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="DanGood">Dan Good</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Senior Programmer, Dell SecureWorks<p>
+				<p><u>Presenting Topic: "Fun and Easy Regular Expressions on the Command Line"</u></p>
+				<p>This talk hopes to answer the questions: "What is a regular expression?", "Why would I want to use one?", and "What's so cool about that?"</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RyanGordon">Ryan C. Gordon</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Freelance Video Game Developer | Maintainer, icculus.org<p>
+				<p><u>Presenting Topic: "How To Quit Your Job"</u></p>
+				<p>Fed up with working for The Man?</p>
+				<p>This talk will give an overview of what it's like to branch out on your own, as a freelance software developer, and give advice on how to survive as an open source hacker without a safety net.</p>
+				<p>Topics covered will include financial concerns, insurance, hustling, work/life balance, contract negotiations, and how much Ramen it is safe to consume per week.</p>
+				<p>Audience members will learn some basic guidelines for launching their own business, and will leave with a better idea of what they want to do with their lives.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="ØysteinGrøvlen">Øystein Grøvlen</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Senior Principal Software Engineer, Oracle</p>
+				<p><u>Presenting Topic: "Powerful EXPLAIN in MySQL 5.6"</u></p>
+				<p>MySQL's EXPLAIN command has for a long time been a very useful tool in for understanding how MySQL will execute a query. However, many users find it a bit confusing and difficult to understand. MySQL 5.6 will come with several new additions that both will make it easier to understand the query plans, and provide more detailed information about what query plan was selected and why.</p>
+				<p>One of the new features that will be presented in this session, is a new variant of EXPLAIN that provides a structured presentation of the query plan in JSON format. We will give several examples of how the new structured output will make it easier to understand MySQL's query plans.</p>
+				<p>While MySQL so far has only supported EXPLAIN for SELECT statements, MySQL 5.6 will also support EXPLAIN for INSERT/UPDATE/DELETE statements. This presentation will give insight into how one can take advantage of this new feature</p>
+				<p>Finally, we will give an introduction to MySQL Optimizer Tracing. This is an advanced tool that will not only present what query plan has been selected by the query optimizer, but also give information about why this particular query plan was selected.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="WolfHalton">Wolf Halton</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Linux Network Administrator, Lyrasis Library Association</p>
+				<p><u>Presenting Topic: "Back-ups of Fragile Systems (Library Systems in Peril)"</u></p>
+				<p>I found myself doing admin on a set of servers recently that were 2 years past end-of-life, and I had to be able to make backups without updating any software or adding any new software. These were production boxes and were not mirrored anywhere, Much of the application code was customized and irreplaceable. I developed a system to do back-ups on these machines that I have since added to all my production machines at LYRASIS Technology. Details on my backup script: http://foss4lib.org/package/getback-library-backup-system</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="ThomasHatch">Thomas Hatch</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Creator, SaltStack</p>
+				<p><u>Presenting Topic: "Execution through Automation with Salt Stack"</u></p>
+				<p>Thomas Hatch will present on how using Salt's powerful communication and configuration management tools can bring next generation capabilities to cloud management and automation. Learn how Salt is made to communicate with cloud infrastructures at break neck speeds and offers one of the fastest to use and learn configuration management systems available today.
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="JasonHibbets">Jason Hibbets</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Project Manager, OpenSource.com, Red Hat</p>
+				<p><u>Presenting Topic: "The Making Of An Open Source City"</u></p>
+				<p>Open source is on the front lines of creating a more transparent, accessible, and participatory government. If you're interested in seeing how the principles of open source could be applied outside of software to everyday citizens, then the making of an open source city will show you how the open source way can benefit your local government.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RichardHipp">D. Richard Hipp </a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Author, SQLite | Author, Fossil | Founder, SQLite.org</p>
+				<p><u>Presenting Topic: "Behind the scenes of Full-Text Search"</u></p>
+				<p>Full-Text Search (the thing that Google, Yahoo, and Bing do) is taken for granted these days. We use it all the time. But not many people understand how it really works behind the curtains. This talk is a quick tutorial on the basic algorithms of full-text search. You won't hear anything about the interfaces or features of any particular full-text search implementation. Rather, the focus of this talk will be the fundamental algorithms and theoretical underpinnings of full-text search, with the goal of equipping the attendee to better understand why the various full-text search implementations work the way they do, where the various limitations arise, and what to do to make applications using full-text search operate at peak efficiency.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="GarrettHoneycutt">Garrett Honeycutt</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Professional Services Engineer, Puppet Labs</p>
+				<p><u>Presenting Topic: "Puppet Tutorial - A Beginner's Guide"</u></p>
+				<p>Hands on Puppet tutorial session. Build out two Puppet nodes, write code, understand how things work.</p>
+				<p>Participants would need a laptop capable of running two VM's (VirtualBox or VMWare).</p>
+				<p><u>Presenting Topic: "Automatic Configuration of Your Cloud with Puppet"</u></p>
+				<p>The shift to cloud-based services has dramatically altered the IT landscape as we know it. Enterprise infrastructure borders have expanded beyond the firewall and now include hosted applications and infrastructure hosted in public and private clouds. Puppet helps DevOps teams meet their common objectives, creating a seamless IT infrastructure across departments, reducing cost and increasing productivity.</p>
+				<p>This training section will cover deploying cloud infrastructure automatically using Puppet, an open source configuration management and automation tool.The session will cover the following topics:<br/>
+				- Configuring Puppet and Puppetmaster<br/>
+				- Resource Types and the Resource Abstration Layer<br/>
+				- Virtual Resources, Exported Resources and Stored Configs</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RandallKent">Randall Kent</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p><u>Presenting Topic: "Cool Things You Can Do With Qtractor"</u></p>
+				<p>If you have ever wanted to leverage Drupal as a web service, this session is for you!</p>
+				<p>In this session we will cover:<br/>
+				- The basics of REST<br/>
+				- Installing & Configuring the Services and related modules<br/>
+				- Managing nodes via a REST API</p>
+				<p>Randall Kent is currently with Sevaa Group and provides data migration, development, and commercial support for Enterprise Drupal deployments.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="Klaatu">Klaatu</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Podcaster, GNU/Linux Enthusiast</p>
+				<p><u>Presenting Topic: "Cool Things You Can Do With Qtractor"</u></p>
+				<p>How to use Qtractor, the digital audio workstation for GNU/Linux.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="KeithLarson">Keith Larson</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: MySQL Community Manager, Oracle</p>
+				<p><u>Presenting Topic: "Summary Tables with MySQL"</u></p>
+				<p>MySQL Summary Tables are not a new concept. They are exactly what they sound like, basically a summary of existing data. We will review how to take advantage of summary table information and ETL the processes to provide quick results for your application.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="ThomasLattimore">Thomas Lattimore</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Technical Designer</p>
+				<p><u>Presenting Topic: "From HTML to Drupal Theme"</u></p>
+				<p>Ever wanted to get involved in theming but didn't know where to start? This is an introduction to Drupal theming for the complete newbie. Covering both the concepts around what theming is, and giving instructions on how to get started building a theme.</p>
+				<p>This session will cover:<br/>
+				- The basic process of converting html to a Drupal Theme<br/>
+				- How your theme relates to Drupal's file structure<br/>
+				- Overriding template files<br/>
+				- Theming best practices, and more!</p>
+			</div>
+		</div>		
+		<h2 class="acc_trigger"><a href="#" name="JeffMace">Jeff Mace</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Director of Professional Services,  Continuent, Inc.</p>
+				<p><u>Presenting Topic: "Building Databases for Multi-Tenant Applications"</u></p>
+				<p>Large scale applications require sharding to keep up with increased traffic. The simplest and most flexible way to shard is at the schema level. This talk will explain the basics of Tungsten Replicator, installing bi-directional replication between database servers, options for global deployment and best practices when you start sharding. For more information on Tungsen Replicator, visit <a href="http://code.google.com/p/tungsten-replicator/">http://code.google.com/p/tungsten-replicator/</a></p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="ZacharyMayo">Zachary Mayo</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Titles: Systems Administrator, AMAC | Senior, UNC Charlotte | Vice-President, 49th Security Division (UNC Charlotte's Ethical Hacking Club) | Co-Captain, UNCC Collegiate Cyber Defense Competition Team</p>
+				<p><u>Presenting Topic: "PROTECT THIS HOUSE | UNCC Takes the Crown"</u></p>
+				<p>This talk will cover accounts from UNC Charlotte's recent performance at the South-Eastern Collegiate Cyber Defense Competition in Kennesaw, GA where they dominated 9 other schools taking away not only 1st Place, but Best in Defense and Best in Services as well. This win was a qualifier for the National CCDC competition which took place in San Antonio, TX.</p>
+				<p>Linux, specifically the Linux servers are a crucial part of the competition and must be constantly monitored and must be secured as best as we can without all the tools we would need.</p>
+				<p>Essentially, the competition is setup as 10 identical IT companies (one per school) who must maintain services that are already running. The computers, servers, and network are plagued with malware, misconfigured, contain physical security threats, and are wide-open to hackers as well. The team must reconfigure, patch, secure, and keep their network up while responding an overwhelming amount of business requests such as change control logs, changes in physical network components, adding/removing services, and much more. All of this while being attacked by a red team consisting of some of the best penetration testers in the world (Lares, SPAWAR, and U.S. Army USCOM). Scoring is based on three categories: Business requests/injection performance, defense from red team, and service uptime.</p>
+				<p>The team is comprised of 8 individuals from the 49th Security Division, UNC Charlotte's ethical hacking and computer security club – also a 2012 nominee of Student Organization of the Year. Talk will include complete overview of the competition, including challenges they faced maintaining services while being attacked by a world-class red-team, exploits used against them, mitigation/recovery, and what it takes to be a successful collegiate computer security team, and how to use Linux to leverage a team to a winning victory. Talk will feature Zachary Mayo (Vice-President, 49SD; Co-Captain CCDC team) and Luke Snyder (Linux Admin, CCDC team, 49SD member.</p>			
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RobMcGee">Rob McGee</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Postfix MTA, DNS, and General Linux whiz.  |  All around great guy (so says Alan Hicks, bless his heart!) Underemployed at this time, seeking clients; please see http://rob0.nodns4.us/</p>
+				<p><u>Presenting Topic: "The Spam Enemy Within"</u></p>
+				<p>An increasing amount of spam comes from apparently legitimate sources, including major freemail services and compromised user accounts anywhere. Such spam cannot be blocked based on IP reputation. This will discuss the ways that anti-spam strategies must evolve to deal with the changing threats.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="MaxMether">Max Mether</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Director, Training Services, SkySQL Ab</p>
+				<p><u>Presenting Topic: "MariaDB - A MySQL Replacement?"</u></p>
+				<p>MariaDB has been making successful parallel-to-MySQL-releases since MariaDB 5.1. The feature list is just bursting which has helped more & more folk migrate their MySQL instances to MariaDB. This talk will focus on the main feature additions in MariaDB, from MariaDB 5.1 to the up and coming MariaDB 5.5 release This includes features like an improved query optimizer, join optimizations, group-commit, ALTER TABLE progress report etc. A brief discussion on coming features for MariaDB 5.6 will also given.</p>
+				<p>&nbsp;</p>
+				<p><u>Presenting Topic: "MySQL Cluster Architecture"</u></p>
+				<p>MySQL Cluster is a separate product from the standard MySQL database, despite their being tightly linked. Due to the distributed nature of MySQL Cluster, it has a far more complicated architecture than a standard MySQL database. In this presentation we will describe the underlying architecture of the MySQL Cluster product and how the process and data flow takes place between the nodes of the cluster. The new features of the recently released MySQL Cluster 7.2 will also be discussed in detail. </p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RobinMiller">Robin Miller</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Columnist, TechTarget  |  Contributor, Slashdot</p>
+				<p><u>Presenting Topic: "Using Linux to Boost Your IT Career"</u></p>
+				<p>How much is Linux knowledge worth in added salary for an IT worker? "It depends...." Certifications are good, but provable experience is better, and involvement in an open source project is always good for extra credit.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="BruceMomjian">Bruce Momjian</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Co-founder, PostgreSQL Global Development Group</p>
+				<p><u>Presenting Topic: "MVCC Unmasked"</u></p>
+				<p>Multi-Version Concurrency Control (MVCC) allows Postgres to offer high concurrency even during significant database read/write activity. MVCC specifically offers behavior where "readers never block writers, and writers never block readers". This talk explains how MVCC is implemented in Postgres and highlights optimizations which minimize the downsides of MVCC. This talk is for advanced users.</p>
+				<p><u>Presenting Topic: "Practical Computerized Home Automation"</u></p>
+				<p>You can control devices in your home from your computer with no new wiring. This session covers controlling lights, bells, and motors using open source software. Wireless remotes can also control devices. Sensors can provide information about motion, sunset, temperature. Capturing caller id and auto-dialing is also covered. X10 is an ideal system for home automation, and there are methods to improve reliability. Computers can easily send X10 signals across your electrical network. The session concludes with a live demo showing a home with 38 computer-controlled devices and sensors.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="KenMoore">Ken Moore</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: PBI Manager, PC-BSD/iXsystems</p>
+				<p><u>Presenting Topic: "PBI Package Creation and Management"</u></p>
+				<p>The PC-BSD has grown and matured greatly over the past several years to become the most popular BSD based desktop operating system. PC-BSD is built upon the popular FreeBSD operating system, but is not a fork. Instead PC-BSD maintains FreeBSD compatibility in every way, while expanding upon it with a variety of new tools and utilities for both casual desktop users, as well as advanced server administrators. In this talk we will take a look at what makes BSD different from Linux, how PC-BSD builds upon FreeBSD, and some of the software design philosophy of PC-BSD 9.0.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="KrisMoore">Kris Moore</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Director of PC-BSD Development, iXsystems</p>
+				<p><u>Presenting Topic: "Introduction to PC-BSD 9"</u></p>
+				<p>Talk Description: The PC-BSD has grown and matured greatly over the past several years to become the most popular BSD based desktop operating system. PC-BSD is built upon the popular FreeBSD operating system, but is not a fork. Instead PC-BSD maintains FreeBSD compatibility in every way, while expanding upon it with a variety of new tools and utilities for both casual desktop users, as well as advanced server administrators. In this talk we will take a look at what makes BSD different from Linux, how PC-BSD builds upon FreeBSD, and some of the software design philosophy of PC-BSD 9.0. </p>
+				<p>Bio: Kris Moore is the founder and lead developer of the most popular BSD based desktop, PC-BSD. He has authored several unique tools for the desktop, including the PBI package management format, and the Warden, a BSD Jails management utility. He resides in the Knoxville area of East Tennessee with his wife and 4 children. </p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="DavidNalley">David Nalley</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Committer, Apache CloudStack</p>
+				<p><u>Presenting Topic: "Permissive Licensing vs. Copyleft"</u></p>
+				<p>There has been a subtle shift between free software and open source.  We'll explore that in depth.</p>
+				<p><u>Presenting Topic: "Building the Open Cloud"</u></p>
+				<p>Cloud is perhaps one of the most talked about an over-used buzzword in IT today – leading to a lot of confusion and dilution of the term. This talk will give a brief overview of the types of cloud deployment models (public, private, and hybrid) and a general understanding of generic cloud service offerings (SaaS, PaaS, and IaaS). The bulk of the conversation will focus on the open source software and standards to adhere to for building cloud computing environments and the complementary open source management tools that can be combined to automate the management of them. The discussion will appeal to anyone who has a good grasp of traditional data center infrastructure but is struggling with the benefits and migration path to a cloud computing environment. Systems administrators and IT generalists will leave the discussion with a general overview of the options for building and managing their own cloud computing environments using free and open source software.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="JonathanNadeau">Jonathan Nadeau</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Executive Director, Accessible Computing Foundation | Fearless Leader, Northeast GNU/Linuxfest</p>
+				<p><u>Presenting Topic: "The Importance of Free Software and Accessibility"</u></p>
+				<p>This talk will bring awareness to accessibility and free software. It will also make developers consider accessibility when they develop their next project.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="DebNicholson">Deb Nicholson</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title:  Community Outreach Director, Open Invention Network  | Community Manager, Media Goblin</p>
+				<p><u>Presenting Topic: "Shared Resources for Promoting Innovation: What You Can Do Regarding Software Patents"</u></p>
+				<p>Innovation, cooperation and the sharing of ideas are fundamental to the success of the free software community. As several notable lawsuits came to light throughout 2011, the free and open source software community saw aggressive use of patents to restrict choice and unfairly impair market forces. We'll see how the US patent system got to where it is in relation to software in particular and discuss what's already been tried and what's currently being done to protect free operating systems.  Have you ever wondered what's at stake, how much money is changing hands, who is at risk and what can help? Defensive patent pools leverage the patents of a few to ensure protection for the group against patent trolls and other aggressors. The core benefit for participants in these pools derives from the fact that a company or member may invest a modest amount but will still receive access to and protection from a vast portfolio. Free software developers are different and have a need for a very different type of defensive patent pool. Lastly, we'll see how shared preemptive resources like Prior Art and Defensive Publications can help defend Linux, GNU and related projects.</p>
+				<p><u>Presenting Topic: "We Are Legion:  Or At Least We Should Be"</u></p>
+				<p>"Software as a service" platforms enable us to carry around small devices and access huge volumes of information. At the same time, it presents challenges for collective privacy, a full diversity of viewpoints and customized online identities. Large service providers are less responsive to users until a significant percentage of their users are all clamoring for the same type of change. What are the options for customizing your web interactions without mobilizing an entire user community? Decentralized or federated services are gaining popularity as the answer for users concerned about the one-size-fits-all web. Decentralized web services allow us to create a many-to-many web instead of a one-to-many web. Projects like the Status.net code that runs identi.ca is a prime working example of how federated services allow users of different services to seamlessly talk to each other. Once standards were put in place users of different email and chat host were able to interact without any special configuration. More work on federation will allow smaller hosts of many different services to interact easily with each other. Media Goblin is just one of the new services that can help build more robust, decentralized web.  I'll discuss historical monopolies that inform the present situation and compare some of the recent problems incurred by limited choices for web services. There is significant work to be done on both the technical and social aspects of federation. I'll conclude with a survey of current alternatives, near to ready projects and the ones we might want to start thinking about building.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="DavidNorman">David Norman</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title:  Information Systems Manager, Classic Graphics</p>
+				<p><u>Presenting Topic: "Getting Involved is Learning"</u></p>
+				<p>Getting to learn Drupal means getting involved in what is the Drupal co-op. It's one thing to specialize as a PHP programmer, or as a themer with a specific audience, but Drupal is big enough you can specialize in parts of Drupal. This session will cover all the many areas where you can apply your interests an talents to both learn about Drupal and help the co-op thrive.</p>
+				<p>Presented by David Norman, with his 11 years of Drupal background, combined with his short attention span, he has touched on almost every part of possible Drupal involvement. This presentation will cover both technical programming style involvement, as well as technical writing, non-profit management, group organizing, and others.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="KevinOtte">Kevin Otte </a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Systems Analyst, University of North Carolina at Chapel Hill, University Libraries</p>
+				<p><u>Presenting Topic: "IPv6: All Systems Go!"</u></p>
+				<p>This presentation will cover IPv6 addressing basics, DNS, and system configuration.</p>
+				<p>Note: SELF 2012 takes place three days after the World IPv6 Launch (<a href="http://www.worldipv6aunch.org">http://www.worldipv6aunch.org</a>).</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="NickOwen">Nick Owen</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: CEO of WiKID Systems, Inc.</p>
+				<p><u>Presenting Topic: "Strong Authentication and your future. To the Cloud! "</u></p>
+				<p>IT is under-going dramatic changes in the way services are delivered. Your servers may be virtual hosts on a server in the cloud or you may rely on SaaS partners.</p>
+				<p>Identity management is the key control for Cloud-based services. This talk will discuss the ins-and-outs of authentication for cloud services, remote access, options for single sign-on etc. </p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="ChristophePettus">Christophe Pettus </a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Consultant, PostgreSQL Experts, Inc</p>
+				<p><u>Presenting Topic: "PostgreSQL When It's Not Your Job"</u></p>
+				<p>In the new, modern, DevOps world, developers are often thrust into being database administrators with little warning, training or enthusiasm. We can't fix the first one, but let's tackle the second two: How do you administer PostgreSQL when it's not your job?</p>
+				<p>We'll cover installation, basic hardware configuration, tuning, backup, disaster recovery, and query optimization, all from the perspective of someone who just wants more than anything else to get back to writing code.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="AndrewPsaltis">Andrew Psaltis</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Software Engineer, Akamai Technologies</p>
+				<p><u>Presenting Topic: "How to Make Make Make"</u></p>
+				<p>GNU Make is ubiquitous. Very many projects use it, however, a great deal of those projects don't actually use it directly. Instead, such projects treat Makefiles as a black box, using a Makefile generator (e.g. automake or CMake) instead. Despite this, it can be useful to know how one can write Makefiles. Deploying them for any project can be done simply, and often, cleanly, due to their innate power and flexibility. This talk will provide an explanation of GNU Make, what it does, how it works, and what you can do with it.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RobertRistroph">Robert Ristroph</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p><u>Presenting Topic: "Simple DevOps Using Jenkins"</u></p>
+				<p>This presentation will cover a simple setup of a Jenkins (it can even run on your laptop), and a set of scripts will be demonstrated that enable the following automation and workflow:<br/>
+				- Run Drupal cron from Jenkins via drush<br/>
+				- Create backups<br/>
+				- Restore from backups<br/>
+				- Refresh a development environment with the database from live<br/>
+				- Update stage, triggered on a commit to version control<br/>
+				- Update production, manually triggered after testing stage</p>
+				<p>As much as this will done live as possible; slides and screenshots will be a fallback. Electronic copy of the scripts and other files will be provided, so that attendees can modify and use them.</p>
+				<p>The presentation is aimed at smaller teams and freelancers, who might consider an automated setup to have too much overhead to be worth it; the goal is to demonstrate that there is a good payoff from a small investment in DevOps.</p>
+				<p>&nbsp;</p>
+				<p><u>Presenting Topic: "Debugging Techniques for Drupal and LAMP"</u></p>
+				<p>A general approach to debugging Drupal problems will be presented, followed by an overview of a variety of tools such as the Devel suite, krumo, xdebug, client side debugging such as Firebug and LiveHTTPHeaders. In addition to debugging functionality, approaches to performance related problems will be covered. Some of these techniques apply generally to all web applications or other PHP code.</p>
+				<p>A structured debugging approach that narrows down problems, rather than making random changes and guesses, is the main goal of the talk.</p>
+				<p>The audience will have a chance to share any debugging tricks they have during a question and answer session.</p>
+
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="JohnRose">John Rose</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Contributor, Fedora Project</p>
+				<p><u>Presenting Topic: "Demoggification"</u></p>
+				<p>We begin our journey with a trip back in time to when Usenet News was the social media of the day and the Useless Use of Cat Award was a staple in comp.unix.shell.</p>
+				<p>Demoggification can be thought of as the process of removing useless cats. In this talk we learn how to remove lots of useless stuff in addition to cats.</p>
+				<p>We look at common ways that cat and other utilities are abused by shell programmers and "demoggify" each example to learn more about useful features of bash including advanced parameter expansions, special redirections, and socket programming.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="ClintSavage">Clint Savage</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Senior Systems Architect - Endosys</p>
+				<p><u>Presenting Topic: "GoOSe Linux – Rebuilding Enterprise Linux, The ‘Community’ Way"</u></p>
+				<p>Several groups have been working together to create a community-based rebuild of a particularly popular Enterprise Linux distribution. GoOSe Linux is part of a bigger movement, the Enterprise Rebuild community, which is trying to document the processes involved with rebuilding and rebranding Enterprise Linux.The GoOSe project started nearly 1 year ago, has been able to work through this process one time, and is working on releasing its first offering, GoOSe Linux 6.0, based upon the upstream’s source RPMs. Alpha releases, called ‘sketchy’, are already available for testing at <a href="https://koji.gooselinux.org/releases/">https://koji.gooselinux.org/releases/</a>.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="BaronSchwartz">Baron Schwartz</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Chief Performance Architect, Percona Inc</p>
+				<p><u>Presenting Topic: "Forecasting MySQL Scalability and Performance from TCP Traffic"</u></p>
+				<p>TCP network traffic is a good lightweight way to analyze and model system performance and scalability. This talk demonstrates a variety of performance and scalability analysis techniques on a single sample of TCP packet headers from a production database. No packet payload is necessary; the analysis relies exclusively on correlating inbound and outbound packets and their arrival times. This makes it practical to gather data from nearly any system with a call-and-response TCP protocol, such as the MySQL protocol (which this talk will focus on). Packet headers are not regarded as privileged data in most organizations, which helps avoid red tape.</p>
+				<p>The talk demonstrates two techniques: time-series analysis of the data to determine whether there are performance problems or opportunities in the server's behavior, and using the data as input to Neil Gunther's Universal Scalability Law to forecast both scalability and performance at load levels beyond what is measured. Both techniques are accomplished with readily-available open-source tools, including some authored by the presenter. The emphasis is on achieving practical results, not on deep mathematical explanations. The techniques demonstrated can help practitioners assess a server without great expenditures of time and effort.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="JamesSchweitzer">James Schweitzer</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: IT Specialist,  IBM</p>
+				<p><u>Presenting Topic: "Learning by Tinkering: Using Open Hardware to Learn by Doing"</u></p>
+				<p>Learning math and science can be fun, but often isn't. Creating things to solve real world problems is an opportunity to supplement traditional education and make STEM subjects fun. With creative effort, you can also link social subjects into the project.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="ZachSeifts">Zach Seifts</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p><u>Presenting Topic: "Continuous Drupal deployment with Aegir, Git, and Jenkins"</u></p>
+				<p>Put on your devops caps folks, I'm going to talk about continuous deployment with Aeigr, Git, and Jenkins. You'll be surprised how easy it can be to deploy code!</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="MarkShropshire">Mark Shropshire</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p><u>Presenting Topic: "Creating and Deploying Drupal Distributions"</u></p>
+				<p>Drupal distributions are a great way to quickly deploy Drupal core and standard sets of modules, libraries, themes, settings and content. This can be useful if you want to release an open source version of a Drupal setup you think others will enjoy, or to quickly deploy a standard set of Drupal tools you use for each project you start.</p>
+				<p>We will discuss creating and deploying Drupal distributions with technologies such as Drush Make, git, Profiler module, Features and installation profiles. The session will also include sample deployments of a Drupal distribution using Aegir and the Drush site-install command.</p>
+				<p>Every attendee will walk away with a sample Drupal distribution code framework to make it easier to create their own distributions!</p>
+				<p>Put on your devops caps folks, I'm going to talk about continuous deployment with Aeigr, Git, and Jenkins. You'll be surprised how easy it can be to deploy code!</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="TeamSELFSlackware">Team SELF Slackware</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Member: Alan Hicks - Senior Linux Systems Administrator, Intermedia Outdoors</p>
+				<p>Member: Robby Workman - Science Teacher, Tuscaloosa, Alabama</p>
+				<p>Member: Vincent Batts - Senior Software Engineer, Red Hat</p>
+				<p>Member: Rob McGee - Awesome Guy</p>
+				<p><u>Presenting Topic: "SELF Help - Networking a Linux Conference"</u></p>
+				<p>How to network a linux conference, small business, and similar environments including config file excerpts for everything from iptables to DHCP, DNS (including dynamic DNS updates), wireless setup, transparent proxies, temporary local mirrors, and other related services.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="BryanSmith">Bryan Smith</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Chief Technical Officer, Tacit Labs Inc | Lead Systems Administrator, Dreamfish.com Global Collaborative</p>
+				<p><u>Presenting Topic: "Cubox: Embedded Linux in Overdrive"</u></p>
+				<p>Cubox is a 2 inch cubed ARM powered device that packs enough punch to deliver 1080p content without blinking an eye, while consuming approximately 3 watts of power.</p>
+				<p>Packed in its shiny 2 inch enclosure is a dual core 800 Mhz ARM7 processor, 1GB of DDR3 RAM, ESata port, HDMI port, SPIF for digital audio, Gigabit Ethernet, Micro SD, Mini USB and IR Sensor.</p>
+				<p>I'll cover Cubox essentials such as its hardware architecture, system specifications, supported OS's, power consumption, tips and tricks, and pros and cons. I'll also show how Cubox scores on benchmarks in relation to other Embedded Linux devices currently being offered.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="DavidSmith">David E Smith Jr</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Professor, ITT Tech</p>
+				<p><u>Presenting Topic: "Expanding the Education of Open Source"</u></p>
+				<p>Here we will introduce our new website that will contain free instructional videos covering various Open Source topics. These topics will be for both the newbie and the advanced professional. An intricate demonstration will be conducted for people to see the benefits of taking advantage of the website.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="JimSmith">Jim Smith</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p><u>Presenting Topic: "A Visual Approach to Drupal's Lego Blocks: Page Manager and Panels"</u></p>
+				<p>The process of building Drupal websites has been compared to playing with Legos building blocks and it's no wonder. Drupal's core architecture uses a building block approach, with each part locked tightly to the other.</p>
+				<p>There are a set of contributed modules, though, that take this analogy further. Page Manager, a part of Chaos Tools Suite, and Panels, which provides numerous options for content and form presentation, allow a Drupal site builder to assemble complex layouts and content configurations without needing any custom code or advanced theming experience.</p>
+				<p>This session is designed to help beginner and intermediate developers explore the many options Page Manager and Panels provide, especially when used with Views. </p>
+				<p>We'll dig deep into these modules to find a wide variety of building blocks to add to your set of Legos.</p>
+				<p>&nbsp;</p>
+				<p><u>Presenting Topic: "BOA: Drupal Utopia"</u></p>
+				<p>How would you like to deploy and manage the hosting of your websites with automated control over many of the most difficult tasks? Would you like to have full backup and restoration capabilities? Spin off new sites or clone old sites? How about safely update your core and contrib modules? And what if you could do that in a secure server that was optimized for speed?</p>
+				<p>Sound too good to be true? Well wait, there's more! What if I told you the way to do this was so simple you could almost call it System Administration for Dummies?</p>
+				<p>And if that wasn't crazy enough, would you believe you can set up a development environment on your computer that mirrors the server setup?<p>
+				<p>Seriously, I'm not over-selling this. This magical world of hosting your sites is not only possible, it is done the "Drupal Way!"</p>
+				<p>In this sesssion you will learn how to use the Barracuda and Octopus projects to install the Aegir hosting system (BOA). Together they turn a plain vanilla Linux server into an effiecient hosting environment running Nginx, MariaDB, and PHP-FPM, the champions of server speed. The setup and configuration also locks down your server so you don't have to constantly worry about security. </p>
+				<p>Then as a bonus, you'll learn about a project that provides an identical setup as a development environment that runs as a VirtualBox machine on your Mac or Windows PC.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="DaveStokes">Dave Stokes</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: MySQL Community Manager, Oracle</p>
+				<p><u>Presenting Topic: "MySQL DBA 101"</u></p>
+				<p>Learn the basics of Installing, running, and managing MySQL databases on Linux platforms. This talk includes MySQL authentications gotchas, why database servers are different than other application servers, and other skills needed to become a MySQL Database Administrator.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="RuthSuehle">Ruth Suehle</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Community Marketing Manager, OpenSource.com, Red Hat</p>
+				<p><u>Presenting Topic: "The Pop Culture Guide to Open Source"</u></p>
+				<p>"Open source" means something larger than sharing code. It's a culture and a set of principles, all built on a foundation of openness. But newcomers to open source sometimes have trouble envisioning what that means or how it works. And experienced veterans of open source communities often have trouble explaining the benefits of openness. Both can win from the common language of pop culture.</p>
+				<p>For example, what better example to explain rapid prototyping than Iron Man? When forced to build weaponry, he instead solved his own problem (or in open source parlance, "scratched his own itch") by building the first Iron Man suit. Later he was able to build upon that and make subsequent iterations. In addition, the suit was copied by others – even enemies.</p>
+				<p>The benefits of community and collaboration and the effects of a successful network of contributors are easy to find in any worthwhile ensemble cast, whether it's the Justice League or the "Scoobies" of Buffy the Vampire Slayer. Mapping the relationships of the movie Love Actually demonstrates the connections between people that are sometimes less seen and the greater whole of crossed paths in multiple communities.</p>
+				<p>The principles that make open source work for software development, like transparency, community, and meritocracy, can be applied to make just about any project, business, or organization better. But the first step in encouraging people to apply those principles is to help them understand them. Further, those already in open source communities are the first step to spreading openness beyond software. Because they've seen the benefits firsthand, they are the perfect ambassadors of openness. Pop culture gives both the language to get started.</p>
+				<p>And once we've all embraced openness, it might even save us from the zombie apocalypse</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="CraigSylvester">Craig Sylvester</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Sales Consultant, Oracle/MySQL</p>
+				<p><u>Presenting Topic: "MySQL Cluster: How Does This Help My Web Site?"</u></p>
+				<p>MySQL Cluster 7.2 enables users to deploy a distributed, highly scalable database with both SQL and NoSQL interfaces, with the ability to perform complex queries or multi-table transactions with ACID guarantees. Complementing existing interface methods (C/C++, Java, and SQL), the 7.2 release introduces support for the memcache API. Other exciting improvements include better user management, Adaptive Query Localization, and support for multi-site environments.</p>
+				<p><u>Presenting Topic: "The MySQL Roadmap: Discover What's New"</u></p>
+				<p>This session covers the MySQL engineering projects that are currently underway or planned. Topics include the new product release cycle that provides the MySQL Community with early access to new database features, technical details behind MySQL 5.6, and the plan to evolve the MySQL database, MySQL Cluster and supporting products going forward. This will be an interactive session, with attendee participation encouraged and welcome.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="DanteTaylor">Dante Taylor</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Creative Director, Mediacurrent</p>
+				<p><u>Presenting Topic: "Desktop to Mobile Using Display Suite: From A Themers Perspective"</u></p>
+				<p>If you ever wondered how to easily control layout from desktop view to mobile or you just want a basic walk through on how to get started using Display Suite and a handful of other modules to quickly mange page layout, join my session Display Suite: From A Themer's Perspective. I will step through some of my experiences working with Display Suite and some of its potential use cases from desktop to mobile design.</p>
+				<p>During this session I will discuss some of the pros and cons of using Display Suite versus other theming tools. We will walk through a few ways Display Suite can be leveraged on just about any Drupal site to easily manage page layout without templates. </p>
+				<p>(Note: this will not be a Panels bashing party, so please leave your clubs, flame throwers, and stones at home. I will have themers on standby for riot control. Smile!!)</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="PaulThedinga">Paul Thedinga</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p><u>Presenting Topic: "Drush for Beginners"</u></p>
+				<p>Life is short, don?t spend all your time updating sites and modules through the Drupal GUI. Save time and speed up routine tasks by using the Drupal command line shell Drush. Come to this session to learn:<br/>
+				- Drush overview and installation<br/>
+				- Frequently used commands<br/>
+				- Modules with Drush integration</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="StevenVaughan-Nichols">Steven J. Vaughan-Nichols</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Long Time Open Source and Linux Reporter</p>
+				<p><u>Presenting Topic: "All Grown Up: Linux at 21"</u></p>
+				<p>Linux turns 21 this year. How did a graduate student project turn into arguably the most important operating system of the 21st century?</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="JohnMarkWalker">John Mark Walker</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p><u>Presenting Topic: "Unified, Scale-out Storage for the Cloud"</u></p>
+				<p>GlusterFS is an open source scale-out NAS solution. The software is a powerful and flexible solution that simplifies the task of managing unstructured file data whether you have a few terabytes of storage or multiple petabytes. It?s no secret that unstructured data is growing like crazy, Gluster provides a solutions that scales capacity and performance as you need it and is an ideal fit for an IT environment that is increasingly virtualized and moving to the cloud.</p>
+				<p>There are two key ways that GlusterFS is beneficial for cloud builders:<br/>
+				1. Storage layer for VMs. If you're deploying Xen or KVM VMs on a private cloud, storing them on GlusterFS gives you the ability to migrate to different hypervisors, suspend and resume quickly - even on another hypervisor, scale out far beyond what other filesystems will allow, and utilize N-way replication for DR and HA<br/>
+				2. Unified storage layer for applications. With GlusterFS 3.3, you will be able to access your application data stores from an object (S3, Swift-style) interface, as well as a traditional POSIX-compatible NAS interface. This unified approach gives developers and admins the ability to access the same data store using a variety of different methods.</p>
+				<p>In this session, attendees will learn steps for deployment and some common use cases.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="ErikWebb">Erik Webb</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Senior Technical Consultant, Acquia</p>
+				<p><u>Presenting Topic: "Performance for Site Builders"</u></p>
+				<p>Most "performance" presentations are designed for those developers that straddle the line between coder and sysadmin. In reality many Drupal sites are built completely from the administrative interface by non-coders, non-sysadmins - we call "site builders." This unique role is often overlooked during in-depth, technical presentations and relegated to "Module XYZ 101" sessions.</p>
+				<p>This presentation is designed to give site builders the knowledge and tools to built high-performance web sites without even touching PHP or the command-line. The Drupal community is ripe with ready-built modules and best practices that can significantly improve the performance of any Drupal site. Use the rapid site building modules to get your site up and running, then learn how to cut those page load times!</p>
+				<p>In this session you will learn how to:<br/>
+				- Apply general best practices to your development process.<br/>
+				- Tune the most common slow-performing modules (e.g. Views, Panels).<br/>
+				- Evaluate the performance of modules before installing them.<br/>
+				- Optimize a site's performance using additional modules.</p>
+				<p>About Erik<br/>
+				Erik Webb is a Senior Technical Consultant at Acquia, where has has worked since early 2010. Building on his many years of experience with Drupal, enterprise PHP application development, and Red Hat systems architecture, he has worked with many of the largest Drupal users in the world, focusing on high performance and infrastructure. On his weekends away from Drupal, he spends his time finding that next great adventure with his wife, including flying thousands of feet above the ground, paragliding in the southeastern United States and all over the world. He lives and works out of Atlanta, GA (or wherever that next great Drupal project may be!).</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="ChadWollenberg">Chad Wollenberg</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: Senior Network Engineer and Director of IT, Southside Virginia Community College</p>
+				<p><u>Presenting Topic: "Open Source in EDU and the Not So Nice Truth"</u></p>
+				<p>Chad Wollenberg will review his talk at the first SouthEast LinuxFest, give an update, and then do an analysis of Open Source in the world of Education. Some good, some bad, but all practical, the talk will be about how you can utilize open source software, how you should not just dive in, and why the world is seeing a shift in thought in the education world. Are you in education or an education enthusiast? Then this talk will not talk around the subject, but rather engage the audience in a real world talk about the modern day EDU open source landscape.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="JimmyYang">Jimmy Yang</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: InnoDB Developer, SyBase</p>
+				<p><u>Presenting Topic: "NoSQL with MySQL - Best of Both Worlds"</u></p>
+				<p>The ever increasing performance demands of web-based services has generated significant interest in providing NoSQL access methods to MySQL – enabling users to maintain all of the advantages of their existing relational database infrastructure, while providing fast access to their data. This session discusses the existing NoSQL access methods for MySQL as well as the latest developments – NoSQL access for both the InnoDB and MySQL Cluster storage engines. See how you can get the best of both worlds – transactions, complex queries, high availability, scalability and simple, fast, flexible APIs.</p>
+				<p><u>Presenting Topic: "How Does InnoDB Optimize For Performance"</u></p>
+				<p>InnoDB is the default storage engine for MySQL. It has always been highly efficient, and includes many unique architectural elements to assure high performance and scalability. The InnoDB storage engine in MySQL 5.5 and MySQL 5.6 includes many new features that take better advantage of recent advances in operating systems and hardware platforms, and permit users to better control the use of some InnoDB internal subsystems to achieve the best performance. At this session, we will describe InnoDB performance features in depth.</p>
+			</div>
+		</div>
+		<h2 class="acc_trigger"><a href="#" name="PeterZaitsev">Peter Zaitsev</a></h2>
+		<div class="acc_container"> 
+			<div class="block">
+				<p>Title: CEO, Percona Inc</p>
+				<p><u>Presenting Topic: "Optimizing MySQL Configuration"</u></p>
+				<p>MySQL's configuration file is often the focus of too much attention, and too much tweaking of variables that make no difference -- or worse, have the potential to negatively impact performance. The sample default configuration files that come with MySQL are unfortunately not very helpful or good, either. You'll learn a practical approach to generate a sensible configuration file that sets what's needed and omits what isn't. The result will be a more stable and performance server that's resistant to many common problems.</p>
+			</div>
+		</div>
+                </div>
+                <div id="footer">
+                        <div style="background-color: #000000; margin: -5px 0px 0px 0px; padding: 0px; position: relative; width: 100%;">
+                                <span class="colorbox" style="background-color: #34687b;">&nbsp;</span>
+                                <span class="colorbox" style="background-color: #5a766f;">&nbsp;</span>
+                                <span class="colorbox" style="background-color: #7d8264;">&nbsp;</span>
+                                <span class="colorbox" style="background-color: #9d8e59;">&nbsp;</span>
+                                <span class="colorbox" style="background-color: #c09a4e;">&nbsp;</span>
+                                <span class="colorbox" style="background-color: #dea545;">&nbsp;</span>
+                                <span class="colorbox" style="background-color: #ff832d;">&nbsp;</span>
+                                <span class="colorbox" style="background-color: #ff5520;">&nbsp;</span>
+                        </div>
+                        <div id="countdown"></div>
+                </div>
+	</body>
+</html>

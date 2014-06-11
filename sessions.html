@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Self Sessions</title>
+		<link href="countdown/jquery.countdown.css" rel="stylesheet" type="text/css" />
+		<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js" type="text/javascript"></script>
+		<script src="countdown/jquery.countdown.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		<!--
+			$(document).ready(function(){
+				$('#countdown').countdown({
+					compact: false,
+					description: "Until SouthEast LinuxFest!",
+					until: new Date(2012, 5, 8), timezone: -5});
+				//Set default open/close settings
+				$('.acc_container').hide(); //Hide/close all containers
+				//$('.acc_trigger:first').addClass('active').next().show(); //Add "active" class to first trigger, then show/open the immediate next container
+				 
+				//On Click
+				$('.acc_trigger').click(function(){
+					if ($(this).next().is(':hidden'))
+					{
+						//If immediate next container is closed...
+						$('.acc_trigger').removeClass('active').next().slideUp(); //Remove all .acc_trigger classes and slide up the immediate next container
+						$(this).toggleClass('active').next().slideDown(); //Add .acc_trigger class to clicked trigger and slide down the immediate next container
+					}
+					else
+					{
+						$(this).toggleClass('active').next().slideUp();
+					}
+					return false; //Prevent the browser jump to the link anchor
+				});
+			});
+		//-->
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<img src="header.png" alt="header" style="max-height: 100%;" />
+			<ul style="float: right; margin: 10px 10px 0px auto; position: relative;">
+				<li style="display: inline-block; text-align: center;"><a href="sessions.html" title="Sessions"><img src="sessions.png" /></a><!--br /><a href="sessions.html" title="Sessions">Sessions</a--></li>
+				<li style="display: inline-block; margin: 0px 25px 0px 25px; text-align: center;"><a href="speakers.html" title="Speakers"><img src="speakers.png" /></a><!--br /><a href="speakers.html" title="Speakers">Speakers</a--></li>
+				<li style="display: inline-block; text-align: center;"><a href="map.html" title="Map"><img src="map.png" /></a><!--br /><a href="map.html" title="Map">Map</a--></li>
+			</ul>
+			<div style="background-color: #000000; margin: -5px 0px 0px 0px; padding: 0px; position: relative; width: 100%;">
+				<span class="colorbox" style="background-color: #34687b;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #5a766f;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #7d8264;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #9d8e59;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #c09a4e;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #dea545;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #ff832d;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #ff5520;">&nbsp;</span>
+			</div>
+		</div>
+		<div class="container">
+			<h2 class="acc_trigger"><a href="#">Friday</a></h2> 
+			<div class="acc_container"> 
+				<div class="block">
+					<table border="0" width="100%">
+						<thead>
+							<tr>
+								<th class="event gray">Room</th>
+								<th class="event green">Oracle</th>
+								<th class="event orange">Digium</th>
+								<th class="event blue">CloudStack</th>
+								<th class="event rust">Linode</th>
+								<th class="event red">Slackware</th>
+							</tr>
+						</thead>
+						<thead>
+							<tr>
+								<th class="event gray">Event</th>
+								<th class="event green">MySQL Training (Advanced)</th>
+								<th class="event orange">MySQL Training (Beginner)</th>
+								<th class="event blue">Build An Open Source Cloud Day</th>
+								<th class="event rust">Speaker Track</th>
+								<th class="event red">Introduction to FreeNAS</th>
+							</tr>
+						</thead>
+						<tbody>
+									<tr>
+										<td class="event gray">9-10</td>
+										<td class="event green">Beyond the ACL's: MySQL Security<br/><br/><a href="speakers.html#SheeriCabral" title="Sheeri Cabral">Sheeri Cabral</a></td>
+										<td class="event orange">MySQL DBA 101<br/><br/><a href="speakers.html#DavidStokes" title="David Stokes">David Stokes</a></td>
+										<td class="event blue">9:00: Build Your Cloud <br/><br/><a href="speakers.html#DavidNalley" title="David Nalley"> David Nalley</a></td>
+										<td class="event rust">Learning by tinkering: Using Open Hardware To Learn by Doing<br/><br/><a href="speakers.html#JamesSchweitzer" title="James Schweitzer">James Schweitzer</a></td>
+										<td class="event red">Introduction and Installation<br/><br/><a href="speakers.html#DruLavigne" title="DruLavigne">Dru Lavigne</a></td>
+									</tr>
+									<tr>
+										<td class="event gray">10:15-11:15</td>
+										<td class="event green">MySQL Cluster Architecture<br/><br/><a href="speakers.html#MaxMether" title="Max Mether">Max Mether</a></td>
+										<td class="event orange">Optimizing MySQL Configuration<br/><br/><a href="speakers.html#PeterZaitsev" title="Peter Zaitsev">Peter Zaitsev</a></td>
+										<td class="event blue">10:00: Automatic Configuration of Your Cloud with Puppet<br/><br/><a href="speakers.html#GarrettHoneycutt" title="Garrett Honeycutt">Garrett Honeycutt</a></td>
+										<td class="event rust">The Spam Enemy Within<br/><br/><a href="speakers.html#RobMcGee" title="Rob McGee">Rob McGee</a></td>
+										<td class="event red">Using the GUI<br/><br/><a href="speakers.html#DruLavigne" title="DruLavigne">Dru Lavigne</a></td>
+									</tr>
+									<tr>
+										<td class="event gray">11:30-12:30</td>
+										<td class="event green">How does InnoDB optimize for performance?<br/><br/><a href="speakers.html#JimmyYang" title="Jimmy Yang">Jimmy Yang</a></td>
+										<td class="event orange">MySQL Roadmap: Discover What's New<br/><br/><a href="speakers.html#CraigSylvester" title="Craig Sylvester">Craig Sylvester</a></td>
+										<td class="event blue">11:00: Execution through Automation with Salt Stack<br/><br/><a href="speakers.html#ThomasHatch" title="Thomas Hatch">Thomas Hatch</a></td>
+										<td class="event rust">We are Legion: or at least we should be<br/><br/><a href="speakers.html#DebNicholson" title="Deb Nicholson">Deb Nicholson</a></td>
+										<td class="event red">Configuration Workflow<br/><br/><a href="speakers.html#DruLavigne" title="DruLavigne">Dru Lavigne</a></td>
+									</tr>
+									<tr>
+										<td class="event gray">12:30-1:30</td>
+										<td class="event gray">Lunch</td>									
+										<td class="event gray">Lunch</td>									
+										<td class="event blue">1:00: Strong Authentication and your future. To the Cloud!<br/><br/><a href="speakers.html#NickOwen" title="Nick Owen"> Nick Owen</a></td>
+										<td class="event gray">Lunch</td>
+										<td class="event gray">Lunch</td>
+									</tr>
+									<tr>
+										<td class="event gray">1:30-2:30</td>
+										<td class="event green">High Availability MySQL<br/><br/><a href="speakers.html#CharlesBell" title="Charles Bell">Charles Bell</a></td>
+										<td class="event orange">Powerful EXPLAIN in MySQL 5.6<br/><br/><a href="speakers.html#ØysteinGrøvlen" title="Øystein Grøvlen">Øystein Grøvlen</a></td>
+										<td class="event blue">2:00:  Unified, Scale-out Storage for the Cloud<br/><br/><a href="speakers.html#JohnMarkWalker" title="John Mark Walker">John Mark Walker</a></td>
+										<td class="event rust">GoOse Linux - Rebuilding Enterprise Linux, the 'Community' Way<br/><br/><a href="speakers.html#ClintSavage" title="Clint Savage">Clint Savage</a></td>
+										<td class="event red">Configuration Workflow<br/><br/><a href="speakers.html#DruLavigne" title="DruLavigne">Dru Lavigne</a></td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 2:45-3:45</td>
+										<td class="event green">MySQL Cluster: How does this help my website?<br/><br/><a href="speakers.html#CraigSylvester" title="Craig Sylvester">Craig Sylvester</a></td>
+										<td class="event orange">Disaster Is Inevitable.  Be prepared.<br/><br/><a href="speakers.html#RonaldBradford" title="Ronald Bradford">Ronald Bradford</a></td>
+										<td class="event blue">3:00: OpenShift<br/><br/>Grant Shipley, Red Hat</td>
+										<td class="event rust">Expanding the Education of Open Source<br/><br/><a href="speakers.html#DavidSmith" title="David Smith">David Smith</a></td>
+										<td class="event red">Using the CLI<br/><br/><a href="speakers.html#DruLavigne" title="DruLavigne">Dru Lavigne</a></td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 4-5</td>
+										<td class="event green">Forecasting MySQL Scalability and Performance from TCP Traffic<br/><br/><a href="speakers.html#BaronSchwartz" title="Baron Schwartz">Baron Schwartz</a></td>
+										<td class="event orange">Introduction to MySQL Replication<br/><br/><a href="speakers.html#CharlesBell" title="Charles Bell">Charles Bell</a></td>
+										<td class="event blue">4:00: Eucalyptus<br/><br/>Andy Grimm<br/><br/>5:00: BAOSCD Ends</td>
+										<td class="event rust">The Making of an Open Source City<br/><br/><a href="speakers.html#JasonHibbets" title="Jason Hibbets">Jason Hibbets</a></td>
+										<td class="event red">Using Plugins Jail / Managing Plugins<br/><br/><a href="speakers.html#DruLavigne" title="DruLavigne">Dru Lavigne</a><br/><br/>5:00: FN Ends</td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 5:15-6:15</td>
+										<td class="event green">NoSQL with MySQL - Best of Both Worlds<br/><br/><a href="speakers.html#JimmyYang" title="Jimmy Yang">Jimmy Yang</a></td>
+										<td class="event orange">Summary Tables with MySQL<br/><br/><a href="speakers.html#KeithLarson" title="Keith Larson">Keith Larson</a></td>
+										<td class="event blue">Fun and Easy Regular Expressions on the Command Line<br/><br/><a href="speakers.html#DanGood" title="Dan Good">Dan Good</a></td>
+										<td class="event rust">MVCC Unmasked<br/><br/><a href="speakers.html#BruceMomjian" title="Bruce Momjian">Bruce Momjian</a></td>
+										<td class="event red">Introduction to PC-BSD 9<br/><br/><a href="speakers.html#KrisMoore" title="Kris Moore">Kris Moore</a></td>
+									</tr>
+						</tbody>
+					</table><br />
+					<div style="text-align:center">
+						<span class="notice">Pre-Party sponsored by OpenSource.com and Eucalyptus:  8:00 PM - ??? in CJ's at Charlotte Blake<br/><br/>LPI Exam Cram:  9-5, Drupal, MySQL, and ODBC classrooms<br/><br/>Drupal 7 In A Day:  9-5, Shoutfire classroom<br/><br/>Blue Collar GIT:  9-5, HP room</span></br>
+					</div>
+				</div> 
+			</div> 
+			<h2 class="acc_trigger"><a href="#">Saturday</a></h2> 
+			<div class="acc_container"> 
+				<div class="block">
+					<table border="0" width="100%">
+						<thead>
+							<tr>
+								<th class="event gray">Room</th>
+								<th class="event green">Oracle</th>
+								<th class="event orange">Digium</th>
+								<th class="event blue">CloudStack</th>
+								<th class="event rust">Linode</th>
+								<th class="event red">Slackware</th>
+							</tr>
+						</thead>
+						<thead>
+							<tr>
+								<th class="event gray">Event</th>
+								<th class="event green">Speaker Track</th>
+								<th class="event orange">Open Database Camp Speaker Track</th>
+								<th class="event blue">Speaker Track</th>
+								<th class="event rust">Speaker Track</th>
+								<th class="event red">Speaker Track</th>
+							</tr>
+						</thead>
+						<tbody>
+									<tr>
+										<td class="event gray">9-10AM</td>
+										<td class="event gray"></td>
+										<td class="event black" colspan="4">Morning Keynote: Using Linux to Boost Your IT Career<br/><br/><a href="speakers.html#RobinMiller" title="Robin Miller">Robin 'Roblimo' Miller</a></td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 10:15-11:15</td>
+										<td class="event green">Demoggification<br/><br/><a href="speakers.html#JohnRose" title="John Rose">John Rose</a></td>
+										<td class="event orange">PostgreSQL When It's Not Your Job<br/><br/><a href="speakers.html#ChristophePettus" title="Christophe Pettus">Christophe Pettus</a></td>
+										<td class="event blue">Practical Computerized Home Automation<br/><br/><a href="speakers.html#BruceMomjian" title="Bruce Momjian">Bruce Momjian</a></td>
+										<td class="event rust">The Pop Culture Guide to Open Source<br/><br/><a href="speakers.html#RuthSuehle" title="Ruth Suehle">Ruth Suehle</a></td>
+										<td class="event red">Image Processing using the PandaBoard<br/><br/><a href="speakers.html#JayneilDalal" title="Jayneil Dalal">Jayneil Dalal</a></td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 11:30-12:30</td>
+										<td class="event green">IPv6: All Systems Go!<br/><br/><a href="speakers.html#KevinOtte" title="Kevin Otte">Kevin Otte</a></td>
+										<td class="event orange">Building Your First MongoDB Application<br/><br/><a href="speakers.html#RickCopeland" title="Rick Copeland">Rick Copeland</a></td>
+										<td class="event blue">The Importance of Free Software and Accessibility.<br/><br/><a href="speakers.html#JonathanNadeau" title="Jonathan Nadeau">Jonathan Nadeau</a></td>
+										<td class="event rust">What Clouds Show About Open Source<br/><br/><a href="speakers.html#DavidNalley" title="David Nalley">David Nalley</a></td>
+										<td class="event red">Cubox: Embedded Linux in Overdrive<br/><br/><a href="speakers.html#BryanSmith" title="Bryan Smith">Bryan Smith</a></td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 12:30-1:30</td>
+										<td class="event black" colspan="5">LUNCH</td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 1:30-2:30</td>
+										<td class="event green">How To Make Make Make<br/><br/><a href="speakers.html#AndrewPsaltis" title="Andrew Psaltis">Andrew Psaltis</a></td>
+										<td class="event orange">MariaDB:  A MySQL Replacement?<br/><br/><a href="speakers.html#MaxMether" title="Max Mether">Max Mether</a></td>
+										<td class="event blue">Cool Things You Can Do With Qtractor<br/><br/><a href="speakers.html#Klaatu" title="Klaatu">Klaatu</a></td>
+										<td class="event rust">Public Cloud, Private Cloud, Open Cloud, Hybrid Cloud<br/><br/><a href="speakers.html#GregDeKoenigsberg" title="Greg DeKoenigsberg">Greg DeKoenigsberg</a></td>
+										<td class="event red">PBI Package Creation and Management<br/><br/><a href="speakers.html#KenMoore" title="Ken Moore">Ken Moore</a></td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 2:45-3:45</td>
+										<td class="event green">PROTECT THIS HOUSE | UNCC Takes the Crown<br/><br/><a href="speakers.html#ZacharyMayo" title="Zachary Mayo">Zachary Mayo</a></td>
+										<td class="event orange">Behind The Scenes of Full Text Search<br/><br/><a href="speakers.html#RichardHipp" title="Richard Hipp">Richard Hipp</a></td>
+										<td class="event blue">Permissive Licensing vs. Copyleft<br/><br/><a href="speakers.html#DavidNalley" title="David Nalley">David Nalley</a></td>
+										<td class="event rust">SELF Help - Networking a Linux Conference<br/><br/><a href="speakers.html#TeamSELFSlackware" title="Team SELF Slackware">Team SELF Slackware</a></td>
+										<td class="event red">Open Source in EDU and the Not So Nice Truth<br/><br/><a href="speakers.html#ChadWollenberg" title="Chad Wollenberg">Chad Wollenberg</a></td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 4-5</td>
+										<td class="event green">Getting Started with OpenStack Essex (2012.1) on Fedora 17<br/><br/><a href="speakers.html#RussellBryant" title="Russell Bryant">Russell Bryant</a></td>
+										<td class="event orange">Intermediate MySQL Administration<br/><br/><a href="speakers.html#SheeriCabral" title="Sheeri Cabral">Sheeri Cabral</a></td>
+										<td class="event blue">Back-ups of Fragile Systems (Library Systems in Peril)<br/><br/><a href="speakers.html#WolfHalton" title="WolfHalton">Wolf Halton</a></td>
+										<td class="event rust">How To Quit Your Job<br/><br/><a href="speakers.html#RyanGordon" title="Ryan 'Icculus' Gordon">Ryan 'Icculus' Gordon</a></td>
+										<td class="event red">Shared Resources for Promoting Innovation: What You Can Do Regarding Software Patents<br/><br/><a href="speakers.html#DebNicholson" title="Ryan “Deb Nicholson">Deb Nicholson</a></td>									</tr>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 5:15-6:15</td>
+										<td class="event green">Advanced Topics in Puppet<br/><br/><a href="speakers.html#GarrettHoneycutt" title="Garrett Honeycutt">Garrett Honeycutt</a></td>
+										<td class="event orange">Data Warehousing 101<br/><br/><a href="speakers.html#JoshBerkus" title="Josh Berkus">Josh Berkus</a></td>
+										<td class="event blue">Building the Open Cloud<br/><br/><a href="speakers.html#DavidNalley" title="David Nalley">David Nalley</a></td>
+										<td class="event rust">Where to Go, and How to Get There: Using Free and Open Source Tools to Plot Your Map to the Fuuuuuuuuuuture!<br/><br/><a href="speakers.html#RobynBergeron" title="Robyn Bergeron">Robyn Bergeron</a></td>
+										<td class="event red">Anatomy of an Open Source Release<br/><br/><a href="speakers.html#DanielBartholomew" title="Daniel Bartholomew">Daniel Bartholomew</a></td>									</tr>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 6:30-7:30</td>
+										<td class="event gray"></td>
+										<td class="event black" colspan="4">Keynote:  All Grown Up: Linux at 21<br/><br/> <a href="speakers.html#StevenVaughan-Nichols" title="Steven J. Vaughan-Nichols">Steven J. Vaughan-Nichols</a></td>
+									</tr>
+						</tbody>
+					</table><br />
+					<div style="text-align:center">
+						<span class="notice">* Party sponsored by Google: 9:00 PM - ??? in CJ's at Charlotte Blake<br/></span>
+						<span class="notice">* Expo Floor open 9:00 AM - 5:00 PM</span>
+					</div>
+				</div> 
+			</div> 
+			<h2 class="acc_trigger"><a href="#">Sunday</a></h2> 
+			<div class="acc_container"> 
+				<div class="block">
+					<table border="0" width="100%">
+						<thead>
+							<tr>
+								<th class="event gray">Room</th>
+								<th class="event green">Oracle</th>
+								<th class="event orange">Digium</th>
+								<th class="event blue">CloudStack</th>
+								<th class="event rust">Linode</th>
+								<th class="event red">Slackware</th>
+								<th class="event purple">TBD</th>
+							</tr>
+						</thead>
+						<thead>
+							<tr>
+								<th class="event gray">Event</th>
+								<th class="event green">Open Database Camp Unconference</th>
+								<th class="event orange">Puppet Training</th>
+								<th class="event blue">DrupalCampCLT<br/>Classic Track</th>
+								<th class="event rust">DrupalCampCLT<br/>Hot Drupal Track</th>
+								<th class="event red">DrupalCampCLT<br/>Dev Cloud Track</th>
+								<th class="event purple">Salt Stack Training</th>
+							</tr>
+						</thead>
+						<tbody>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 9-10AM</td>
+										<td class="event green">To be determined by attendees at event</td>
+										<td class="event orange">TBD</td>
+										<td class="event blue">TBD</td>
+										<td class="event rust">TBD</td>
+										<td class="event red">TBD</td>
+										<td class="event purple">TBD</td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 10:15-11:15</td>
+										<td class="event green">To be determined by attendees at event</td>
+										<td class="event orange">TBD</td>
+										<td class="event blue">From HTML to Drupal Theme<br/><br/><a href="speakers.html#ThomasLattimore" title="Thomas Lattimore">Thomas Lattimore</a></td>
+										<td class="event rust">Performance for Site Builders<br/><br/><a href="speakers.html#ErikWebb" title="Erik Webb">Erik Webb</a></td>
+										<td class="event red">Rapid Drupal Development using the Features Module<br/><br/><a href="speakers.html#MatthewConnerton" title="Matthew Connerton">Matthew Connerton</a></td>
+										<td class="event purple">TBD</td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 11:30-12:30</td>
+										<td class="event green">To be determined by attendees at event</td>
+										<td class="event orange">TBD</td>
+										<td class="event blue">A Step-by-Step Drupal Site, in Less than One Hour<br/><br/><a href="speakers.html#BrentDunn" title="Brent Dunn">Brent Dunn</a></td>
+										<td class="event rust">Creating and Deploying Drupal Distributions<br/><br/><a href="speakers.html#MarkShropshire" title="Mark Shropshire">Mark Shropshire</a></td>
+										<td class="event red">SEO with Drupal 6 and Drupal 7<br/><br/><a href="speakers.html#DavidMinton" title="DavidMinton">David Minton</a>, <br/><br/><a href="speakers.html#StephenPashby" title="Stephen Pashby">Stephen Pashby</a></td>
+										<td class="event purple">TBD</td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 12:30-1:30</td>
+										<td class="event green">To Be determined by attendees at event</td>
+										<td class="event orange">TBD</td>
+										<td class="event blue">Lunch</td>
+										<td class="event rust">Lunch</td>
+										<td class="event red">Lunch</td>
+										<td class="event purple">TBD</td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 1:30-2:30</td>
+										<td class="event green">To be determined by attendees at event</td>
+										<td class="event orange">TBD</td>
+										<td class="event blue">Getting involved is learning<br/><br/><a href="speakers.html#DavidNorman" title="David Norman">David Norman</a></td>
+										<td class="event rust">Continuous Drupal deployment with Aegir, Git, and Jenkins<br/><br/><a href="speakers.html#ZachSeifts" title="Zach Seifts">Zach Seifts</a></td>
+										<td class="event red">Simple DevOps Using Jenkins<br/><br/><a href="speakers.html#RobertRistroph" title="Robert Ristroph">Robert Ristroph</a></td>
+										<td class="event purple">TBD</td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 2:45-3:45</td>
+										<td class="event green">To be determined by attendees at event</td>
+										<td class="event orange">TBD</td>
+										<td class="event blue">A Visual Approach to Drupal's Lego Blocks: Page Manager and Panels<br/><br/><a href="speakers.html#JimSmith" title="Jim Smith">Jim Smith</a></td>
+										<td class="event rust">Debugging Techniques for Drupal and LAMP<br/><br/><a href="speakers.html#RobertRistroph" title="Robert Ristroph">Robert Ristroph</a></td>
+										<td class="event red">Getting Started with Drupal Services<br/><br/><a href="speakers.html#RandallKent" title="Randall Kent">Randall Kent</a></td>
+										<td class="event purple">TBD</td>
+									</tr>
+									<tr>
+										<td class="event gray"><span class="notice"></span> 4-5</td>
+										<td class="event green">To be determined by attendees at event</td>
+										<td class="event orange">TBD</td>
+										<td class="event blue">Drush for Beginners<br/><br/><a href="speakers.html#PaulThedinga" title="Paul Thedinga">Paul Thedinga</a></td>
+										<td class="event rust">BOA: Drupal Utopia<br/><br/><a href="speakers.html#JimSmith" title="Jim Smith">Jim Smith</a></td>
+										<td class="event red">Desktop to Mobile Using Display Suite: From A Themers Perspective<br/><br/><a href="speakers.html#DanteTaylor" title="Dante Taylor">Dante Taylor</a></td>
+										<td class="event purple">TBD</td>
+									</tr>
+						</tbody>
+					</table><br />
+					<div style="text-align:center">
+						<span class="notice">* Expo Floor open 9:00 AM - 3:00 PM</span></br>
+						<span class="notice">* BSDA Certification 11:00 AM in TBD. LPI Certification 11:00 AM, 1:00 PM, 3:00 PM in TBD.</span></br><p>
+						<span class="notice">Monday June 11th, 2012</span></br>
+						<span class="notice">* SELF Hangover Day: Carowinds</span></br>
+						<span class="notice"><a href="http://ow.ly/aUoXO">http://ow.ly/aUoXO</a></span></br><p>
+						<span class="notice">* Mastering PostgreSQL Administration:  Paid Training by Bruce Momjian</span></br>
+						<span class="notice"><a href="http://ow.ly/aUoIP">http://ow.ly/aUoIP</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div style="background-color: #000000; margin: -5px 0px 0px 0px; padding: 0px; position: relative; width: 100%;">
+				<span class="colorbox" style="background-color: #34687b;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #5a766f;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #7d8264;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #9d8e59;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #c09a4e;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #dea545;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #ff832d;">&nbsp;</span>
+				<span class="colorbox" style="background-color: #ff5520;">&nbsp;</span>
+			</div>
+			<div id="countdown"></div>
+		</div>
+	</body>
+</html>
