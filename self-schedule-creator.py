@@ -36,8 +36,9 @@ tspeaker = Template('''\
 		<div class="acc_container"> 
 			<div class="block">
 				<p><strong>Title:</strong> ${title}</p>
+				<p><strong>Bio:</strong> ${bio}</p>
 				<p><strong>Presenting Topic:</strong><u>"${topic}"</u></p>
-				<p>${description}</p>
+				<p>${desc}</p>
 				<p><strong>Audience:</strong> ${purpose}</p>
 			</div>
 		</div>\n\n\
@@ -95,6 +96,6 @@ with open(sys.argv[1], 'rb') as csvfile:
 
 		# Write out the speakers info, bio, and talk synopsis
 		fspeaker.write(tspeaker.substitute(topic=sTopic, ref=sSpeaker.translate(None, ' '), speaker=sSpeaker,
-			title=sPosition, description=sBio, purpose=sPurpose))
+			title=sPosition, bio=sBio, desc=sDesc, purpose=sPurpose))
 		
 	print 'Skipped ' + str(cSkipCount) + ' unassigned talks\n'
